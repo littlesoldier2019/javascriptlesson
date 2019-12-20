@@ -415,7 +415,7 @@ console.log(itCompanies)
 console.log(itCompanies.splice())
 
 
-//ADDITIONAL EXERCISES
+//Javasript.info
 
 // let message = prompt("How old are you?")
 // alert(`You are ${message} years old`);

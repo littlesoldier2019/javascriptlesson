@@ -1,3 +1,5 @@
+//===Javasript.info===
+
 //==OR==
 
 //alert( null || 2 || undefined );
