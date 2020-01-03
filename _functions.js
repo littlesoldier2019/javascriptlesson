@@ -45,42 +45,33 @@
 // let z = prompt("Choose a value to multible y by z time","")
 // alert(pow(y,z))
 
-// function ask(question, yes, no) {
-    
-//   }
-  
-//   ask(
+
+// let ask = (question, yes, no) => {
+//     if (confirm(question)) yes();
+//     else no();
+// }
+
+// ask (
 //     "Do you agree?",
-//     function() { alert("You agreed."); },
-//     function() { alert("You canceled the execution."); }
-//   );
+//     () => alert("You agreed."),
+//     () => alert("You canceled the execution.") 
+// )
 
-let ask = (question, yes, no) => {
-    if (confirm(question)) yes();
-    else no();
-}
-
-ask (
-    "Do you agree?",
-    () => alert("You agreed."),
-    () => alert("You canceled the execution.") 
-)
-
-function pow(x,n) {
-  let result = 1;
+// function pow(x,k) {
+//   let result = 1;
   
-  for (let i = 0; i < n; i++) {
-      result*=x;
-    } 
-    return result;
-}
+//   for (let i = 0; i < k; i++) {
+//       result*=x;
+//     } 
+//     return result;
+// }
 
-let x = prompt("x?",'');
-let n = prompt("n?",'');
+// let x = prompt("x?",'');
+// let k = prompt("k?",'');
 
-if (n <= 0) {
-  alert(`Power ${n} is not supported, 
-  please enter an integer number greater than zero`);
-} else {
-  alert( pow(x,n) );
-}
+// if (k <= 0) {
+//   alert(`Power ${k} is not supported, 
+//   please enter an integer number greater than zero`);
+// } else {
+//   alert( pow(x,k) );
+// }
