@@ -56,56 +56,40 @@ for (let key in menu) {
 console.log(multiplyNumeric)
 
 ///=================
-let calculator = {
-    read() {
-        calculator.prom1 = +prompt("Enter a value","");
-        calculator.prom2 = +prompt("Enter a value","");
-    },
-    sum() {
-        return this.prom1 + this.prom2;
-    },
-    mul() {
-        return this.prom1 * this.prom2;
-    },
-  };
+// let calculator = {
+//     read() {
+//         calculator.prom1 = +prompt("Enter a value","");
+//         calculator.prom2 = +prompt("Enter a value","");
+//     },
+//     sum() {
+//         return this.prom1 + this.prom2;
+//     },
+//     mul() {
+//         return this.prom1 * this.prom2;
+//     },
+//   };
   
-  ///=================
-calculator.read();
-   alert( calculator.sum() );
-   alert( calculator.mul() );
+// calculator.read();
+//    alert( calculator.sum() );
+//    alert( calculator.mul() );
 
+///=================
 let ladder = {
     step: 0,
     up() {
       this.step++;
+      return this;
     },
     down() {
       this.step--;
+      return this;
     },
     showStep: function() { 
       alert( this.step );
+      return this;
     }
   };
 
-ladder.up().up().down().showStep();
-
-
-let ladder = {
-    step: 0,
-    up() {
-      this.step++;
-      return this;
-    },
-    down() {
-      this.step--;
-      return this;
-    },
-    showStep() {
-      alert( this.step );
-      return this;
-    }
-  }
-  
 ladder.up().up().down().up().down().showStep();
 
 ladder
@@ -115,3 +99,40 @@ ladder
   .up()
   .down()
   .showStep();
+
+///=================
+function Calculator() {
+  this.read = function () {
+    this.a = +prompt("What is a?","");
+    this.b = +prompt("What is b?","");
+  }
+  this.sum = function () {
+    return this.a + this.b; 
+  }
+  this.mul = function () {
+    return this.a * this.b;
+  }
+}
+
+
+let calculator = new Calculator();
+calculator.read();
+
+alert( "Sum=" + calculator.sum() );
+alert( "Mul=" + calculator.mul() );
+
+///=================
+function Accumulator(startingValue) {
+    this.value = startingValue;
+
+    this.read = function () {
+      this.value += +prompt( "Enter starting value","" );
+    }
+}
+
+let accumulator = new Accumulator(1); 
+
+accumulator.read(); 
+accumulator.read(); 
+
+alert(accumulator.value);
