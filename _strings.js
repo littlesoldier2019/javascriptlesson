@@ -27,3 +27,9 @@ function truncate(string3, maxlength) {
 console.log(truncate("What I'd like to tell on this topic is:", 20))
 console.log(truncate("Hi everyone!", 20))
 
+///=================
+function extractCurrencyValue(str) {
+    return +str.slice(1);
+}
+
+console.log(extractCurrencyValue("$120"))
