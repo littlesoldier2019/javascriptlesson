@@ -201,12 +201,11 @@ console.log( calc.calculate("10 * 5") );
 console.log( calc.calculate("12 / 3") );
 console.log( calc.calculate("2 ** 3") );
 
-
-/* HỎI KHIÊM */
+/* CHECK AGAIN*/
 // function Calculator2() {
 //     this.method2 = {
-//         '+': (a, b) => a + b,
-//         '-': (a, b) => a - b, 
+//         "+": (a, b) => a + b,
+//         "-": (a, b) => a - b, 
 //     }
 //     this.calculate2 = function (string) {
 //         let array = string.split(" ");
@@ -214,15 +213,15 @@ console.log( calc.calculate("2 ** 3") );
 //         let op = array[1];
 //         let b = +array[2];
 
-//         if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+//         if (!this.method2[op] || isNaN(a) || isNaN(b)) {
 //             return NaN;
-//           }
+//         }
 
 //         return this.method2[op](a,b);
 //     } 
-//     this.addMethod = function(op, function2) {
-//         this.methods2[op] = function2;
-//       };
+//     this.addMethod = function(opperation, functions) {
+//         this.methods2[opperation] = functions;
+//     };
 // }
 
 // let powerCalc = new Calculator2;
@@ -293,3 +292,20 @@ usersMapped = [
 
 console.log( users3Mapped[0].id ) // 1
 console.log( users3Mapped[0].fullName ) // John Smith
+
+///=================
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let arr = [ pete, john, mary ];
+
+// arr.map(function sortByAge(arr) {
+
+//     }
+// )
+
+// // now: [john, mary, pete]
+// console.log(arr[0].name); // John
+// console.log(arr[1].name); // Mary
+// console.log(arr[2].name); // Pete
