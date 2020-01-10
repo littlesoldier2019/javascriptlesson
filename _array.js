@@ -201,36 +201,36 @@ console.log( calc.calculate("10 * 5") );
 console.log( calc.calculate("12 / 3") );
 console.log( calc.calculate("2 ** 3") );
 
-/* CHECK AGAIN*/
-// function Calculator2() {
-//     this.method2 = {
-//         "+": (a, b) => a + b,
-//         "-": (a, b) => a - b, 
-//     }
-//     this.calculate2 = function (string) {
-//         let array = string.split(" ");
-//         let a = +array[0];
-//         let op = array[1];
-//         let b = +array[2];
 
-//         if (!this.method2[op] || isNaN(a) || isNaN(b)) {
-//             return NaN;
-//         }
+function Calculator2() {
+    this.method2 = {
+        "+": (a, b) => a + b,
+        "-": (a, b) => a - b, 
+    }
+    this.calculate2 = function (string) {
+        let array = string.split(" ");
+        let a = +array[0];
+        let op = array[1];
+        let b = +array[2];
 
-//         return this.method2[op](a,b);
-//     } 
-//     this.addMethod = function(opperation, functions) {
-//         this.methods2[opperation] = functions;
-//     };
-// }
+        if (!this.method2[op] || isNaN(a) || isNaN(b)) {
+            return NaN;
+        }
 
-// let powerCalc = new Calculator2;
-// powerCalc.addMethod("*", (a, b) => a * b);
-// powerCalc.addMethod("/", (a, b) => a / b);
-// powerCalc.addMethod("**", (a, b) => a ** b);
+        return this.method2[op](a,b);
+    } 
+    this.addMethod = function(opperation, functions) {
+        this.method2[opperation] = functions;
+    }
+}
 
-// let result2 = powerCalc.calculate2("2 ** 3");
-// console.log( result2 )
+let powerCalc = new Calculator2;
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+let result2 = powerCalc.calculate2("2 ** 3");
+console.log( result2 )
 
 ///=================
 let john = { name: "John", age: 25 };
