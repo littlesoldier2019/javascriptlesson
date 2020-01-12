@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Знакомство с объектами</title>
+	<script>
+		 var user = {
+		 	name: "John",
+		 	age: 25,
+		 	email: "john@vesteros.com"
+		 };
+
+		 // change the value of the age property
+		 user.age = 27;
+		 // we get the property value
+		 alert(user.age);
+
+		 var cat = {
+		 	name: "Barsik",
+		 	age: 2,
+		 	type: "Scottish fold",
+		 	owner: user, // the user object is stored in the owner property
+		 	// functions in the composition of the object are called methods
+		 	meow: function(n) {
+		 		for (var i = 0; i<n; i++) {
+		 			alert("Meyayayayau!");
+		 		}
+		 	},
+
+		 	 showInfo: function() {
+		 		alert("Nickname: " + this.name + ",\nage: "+ this.age + ",\nemail the owner: "+ this.owner.email);
+		 	}
+		 };
+
+		 // // method call with argument
+		 // cat.meow(3);
+
+		 // alert(cat.owner.name);
+		 cat.showInfo();
+
+		 // created a copy of the cat
+		 var cat2 = Object.create(cat);
+		 cat2.name = "Murka",
+		 cat2.age = 3;
+
+		 alert(cat.name + " : " + cat2.name);
+
+		 cat2.showInfo();
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

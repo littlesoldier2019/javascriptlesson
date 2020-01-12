@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<title>Blog</title>
+	<meta charset="utf-8" />
+
+	<style>
+
+		#form {
+			width: 350px;
+			margin: 50px auto 0;
+			background: #e4e4e4;
+			padding: 10px;
+		}
+
+		textarea {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		#blog {
+			width: 370px;
+			margin: 0 auto;
+
+		}
+
+		#blog p {
+			background: #e4e4e4;
+			padding: 15px;
+			border-radius: 10px;
+			border: 1px solid #555;
+		}
+
+	</style>
+
+	<script>
+		window.onload = function () {
+			let textarea = document.getElementById("message");
+			let sendBtn = document.getElementById("send");
+			let blog = document.getElementById("blog");
+
+			sendBtn.onclick = function () {
+				if (textarea.value != "") {
+					// adding a p tag inside the beginning of div with idдобавление тега p в начало содержимого тега div с id = blog
+					blog.innerHTML = "<p>" + textarea.value + "</p>" + blog.innerHTML;
+					textarea.value = "";
+					//deleting style
+					textarea.style.outline = null;
+				} else {
+					textarea.style.outline = "2px solid red";
+				}
+
+				textarea.focus();
+			}; 
+			// this is an event in the moment when user push any key on the keypad
+			// when the textarea field is in focus
+			// if you want to know which key was pressed you should use object event
+			textarea.onkeydown = function(event) {
+				// 13 = enter, ctrlKey will equal to true, if ctrl was pressed
+				if (event.keyCode == 13 && event.ctrlKey == true) {
+					// we call the function that is stored in the property of the sendBtn object
+					sendBtn.onclick();
+				}
+			}
+		};
+	</script>
+</head>
+<body>
+
+	<div id="form">
+		<textarea autofocus id="message" rows="4" placeholder="Enter a message.."></textarea>
+		<button id="send">Send</button>
+	</div>
+	<div id="blog">
+		
+	</div>
+
+</body>
+</html>

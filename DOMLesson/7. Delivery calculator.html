@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delivery calculator</title>
+	<meta charset="utf-8" />
+	<script>
+		window.onload = function () {
+			let zone = document.getElementById("zone");
+			let weight = document.getElementById("weight");
+			let calculate = document.getElementById("calculate");
+			let result = document.getElementById("result");
+
+			calculate.onclick = function () {
+				if (zone.value == "city") {
+					result.innerHTML = 1 * weight.value + " $";
+					weight.value = "";
+				} else if (zone.value == "kad") {
+					result.innerHTML = 5 * weight.value + " $";
+					weight.value = "";
+				} else if (zone.value == "lo") {
+					result.innerHTML = 10 * weight.value + " $";
+					weight.value = "";
+				}
+			}
+		}
+ 
+
+	</script>
+</head>
+<body>
+	<p>
+		Where to deliver? <br />
+		<select id="zone">
+			<option value="city">In the city center</option>
+			<option value="kad">Outside the city center</option>
+			<option value="lo">In another region</option>
+		</select>
+	</p>
+
+	<p>
+		The weight, kg: <br />
+		<input type="number" min="1" max="1000" id="weight" /> 
+	</p>
+
+	<button id="calculate">Calculate</button>
+
+	<p id="result"></p>
+</body>
+</html>

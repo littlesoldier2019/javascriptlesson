@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // window.onload = function () {
+        //     let numA = document.getElementById("numA");
+        //     let numB = document.getElementById("numB");
+        //     let plus = document.getElementById("plus");
+        //     let minus = document.getElementById("minus");
+        //     let divide = document.getElementById("divide");
+        //     let multi = document.getElementById("multi");
+    
+        //     numA.onclick = function () {
+        //         numA.value = "";
+        //     }
+
+        //     numB.onclick = function () {
+        //         numB.value = "";
+        //     }
+                       
+
+        //     plus.onclick = function () {
+        //         if (isNaN(numA.value) || isNaN(numB.value)) {
+        //             alert("Enter a number")
+        //         }  else {
+        //             let cal= Number(numA.value) + Number(numB.value);
+        //             result.innerHTML = "The result is " + cal;
+        //         }
+                
+        //     }
+
+        //     minus.onclick = function () {
+        //         if (isNaN(numA.value) || isNaN(numB.value)) {
+        //             alert("Enter a number")
+        //         }  else {
+        //             let cal = Number(numA.value) - Number(numB.value);
+        //             result.innerHTML = "The result is " + cal;
+        //         }
+                
+        //     }
+
+        //     divide.onclick = function () {
+        //         if (isNaN(numA.value) || isNaN(numB.value) || (numB.value === 0)) {
+        //             alert("Enter a number")
+        //         }  else {
+        //             let cal = Number(numA.value) / Number(numB.value);
+        //             result.innerHTML = "The result is " + cal;
+        //         }
+                
+        //     }
+
+        //     multi.onclick = function () {
+        //         if (isNaN(numA.value) || isNaN(numB.value)) {
+        //             alert("Enter a number")
+        //         }  else {
+        //             let cal = Number(numA.value) * Number(numB.value);
+        //             result.innerHTML = "The result is " + cal;
+        //         }
+                
+        //     }
+
+        window.onload = function () {
+            let numA = document.getElementById("numA");
+            let numB = document.getElementById("numB");
+            let op = document.getElementsByTagName("button");
+            let result = document.getElementById("result");
+
+            let method = {
+                '+': (x, y) => x + y,
+                '-': (x, y) => x - y,
+                '*': (x, y) => x * y,
+                '/': (x, y) => x / y,
+            }
+
+            for (let i = 0; i < op.length; i++) {
+                
+                op[i].onclick = function () {
+
+                    let cal;
+                
+                    if (isNaN(numA.value) || isNaN(numB.value) || (numB.value === 0)) {
+                        alert("Enter a valid number");
+                    } else {
+                        cal = method[op[i].innerText](Number(numA.value),Number(numB.value));
+                    }
+                
+                    result.innerHTML = "The result is " + cal;
+                
+                }
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input id="numA" type="text" value="Enter a number A">
+    <input id="numB" type="text" value="Enter a number B">
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+    <button id="divide">/</button>
+    <button id="multi">*</button>
+
+    <p id="result">The result</p>
+</body>
+</html>
