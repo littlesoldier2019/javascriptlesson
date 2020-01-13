@@ -253,6 +253,11 @@ let users2 = [ john2, pete2, mary2 ];
 let users2Mapped = users2.map(
     user => ({fullName: `${user.name} ${user.surname}`, id: user.id})
     )
+// let userIndex = users2.map(
+//     (user, index) => {return index;
+// })
+
+// console.log(userIndex);
 
 /*
 usersMapped = [
