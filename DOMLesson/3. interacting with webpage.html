@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Объект document</title>
+	<script>
+		// you could interact with webpage only after it's loaded
+		// that's why we place all code inside a function, which we store inside window.onload
+		window.onload = function() {
+			let userName = prompt("Enter your name");
+
+			let h1 = document.getElementById("title");
+			h1.innerHTML = 'Hi ' + userName;
+
+		};
+	</script>
+</head>
+<body>
+	<h1 id="title">Some title</h1>
+</body>
+</html>

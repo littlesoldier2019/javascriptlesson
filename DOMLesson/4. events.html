@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Event Handling</title>
+	<script>
+		window.onload = function () {
+			let btn = document.getElementById("hi");
+			let h1 = document.getElementById("header");
+			let clear = document.getElementById("clear");
+			btn.onkeydown = function (f) {
+				// special function for diplaying the info in the browser console
+				console.log();
+				h1.innerHTML = "This is a new text in the title";
+			};
+
+			clear.onclick = function () {
+				h1.innerHTML = "";
+			}
+
+
+		};
+
+	</script>
+</head>
+<body>
+	<button id="hi">Hello!</button>
+	<button id="clear">Clear</button>
+	<h1 id="header"></h1>
+</body>
+</html>

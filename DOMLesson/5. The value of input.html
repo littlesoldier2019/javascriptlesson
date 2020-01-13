@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Свойство value</title>
+	<meta charset="utf-8">
+	<script>
+		window.onload = function () {
+			let title = document.getElementById("title");
+			let input = document.getElementById("field");
+			let changeBtn = document.getElementById("change");
+
+			changeBtn.onclick = function () {
+				if (input.value != "") {
+					title.innerHTML = input.value;
+					// change the text in the input
+					input.value = "";
+				} else {
+					alert ("Enter the text!");
+				}
+			}
+
+		};
+	</script>
+</head>
+<body>
+	<h1 id="title"> </h1>
+	<input type="text" id="field" value="">
+	<button id="change">Change</button>
+</body>
+</html>
