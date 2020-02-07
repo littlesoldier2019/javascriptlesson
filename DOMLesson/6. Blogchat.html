@@ -57,7 +57,7 @@
 			// if you want to know which key was pressed you should use object event
 			textarea.onkeydown = function(event) {
 				// 13 = enter, ctrlKey will equal to true, if ctrl was pressed
-				if (event.keyCode == 13 && event.ctrlKey == true) {
+				if (event.keyCode == 13 ) {
 					// we call the function that is stored in the property of the sendBtn object
 					sendBtn.onclick();
 				}

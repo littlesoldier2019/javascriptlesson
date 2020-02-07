@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.circle {
+			border-radius: 50%;
+			position: absolute;
+			animation: scale 0.6s infinite;
+
+		}
+
+		@keyframes scale {
+			from {
+				transform: scale(0.2);
+			}
+			to {
+				transform: scale(1);
+				opacity: 0.7;
+			}
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var count = 0;
+
+			var timer = setInterval(function () {
+				// создаем новый тег div
+				// create a new tag div
+				var circle = document.createElement("div");
+				//случайное число в диапазоне от 10 до 150 включительно
+				// a random number in the range from 10 to 150
+				var size = Math.floor(Math.random()*141 + 10);
+
+				// случайное число от 0 до значения ширины области просмотра 
+				// a random number drom 0 to the value of the screen width
+				var x = Math.floor(Math.random()* window.innerWidth) - size;
+				var y = Math.floor(Math.random()* window.innerHeight) - size;
+
+				var r = Math.floor(Math.random()* 256);
+				var g = Math.floor(Math.random()* 256);
+				var b = Math.floor(Math.random()* 256);
+
+				var dur = Math.random() * 3 + 0.6;
+
+
+				circle.style.width = size + "px";
+				circle.style.height = size + "px";
+				circle.style.top = y + "px";
+				circle.style.left = x + "px";
+				circle.style.background = "rgb("+r+","+g+","+b+")";
+
+				circle.style.animation.duration = dur + "s";
+				// задаем значение атрибута class
+				// defining class attribute
+				circle.setAttribute("class", "circle");
+
+				document.body.appendChild(circle);
+				count++;
+
+				// на сотом кружочке останавливаем таймер
+				// on the 100th circle stop the timer
+				if (count == 100) {
+					clearInterval(timer);
+				}
+
+
+			}, 100);
+		};
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

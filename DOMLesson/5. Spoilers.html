@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<title>Hiding and showing a text</title>
+	<meta charset="utf-8" />
+	<script>
+		window.onload = function () {
+			var links = document.querySelectorAll(".show-spoiler");
+
+				for(var i = 0; i<links.length; i++) {
+					links[i].onclick = function () {
+						console.log(this);
+						var target = this.getAttribute("data-target");
+						console.log(target)
+						var spoiler = document.querySelector(target);
+						console.log(spoiler);
+						spoiler.classList.toggle("spoiler-visible");
+
+							if (spoiler.classList.contains("spoiler-visible")) {
+								this.innerHTML = "Hide";
+							} else {
+								this.innerHTML = "Show";
+							}
+
+					};
+				}
+		};
+	</script>
+	<style>
+		.news {
+			background: #e9e9e9;
+			padding: 20px;
+			border-radius: 5px;
+			margin-bottom: 15px;
+			width: 600px;
+		}
+
+		.spoiler {
+			display: none;
+		}
+
+		.spoiler-visible {
+			display: block;
+		}
+
+		.show-spoiler {
+			text-decoration: none;
+			border-bottom: 1px dashed;
+			color: #44a0ff;
+			cursor: pointer;
+		}
+
+		.show-spoiler:hover {
+			color: #f00;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="news">
+		This is a text. The beginning of it.
+		<div class="spoiler" id="news-1">
+			This is a continuation of the news. 
+		</div>
+		<div><span data-target="#news-1" class="show-spoiler">Show</span></div>
+	</div>
+
+	<div class="news">
+		This is a text. The beginning of it.
+		<div class="spoiler" id="news-2">
+			This is a continuation of the news. 
+		</div>
+		<div><span data-target="#news-2" class="show-spoiler">Show</span></div>
+	</div>
+
+	<div class="news">
+		This is a text. The beginning of it.
+		<div class="spoiler" id="news-3">
+			This is a continuation of the news. 
+		</div>
+		<div><span data-target="#news-3" class="show-spoiler">Развернуть</span></div>
+	</div>
+
+	<div class="news">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi dolorem aperiam cupiditate delectus sit nisi, hic necessitatibus at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.
+		<div class="spoiler" id="news-4">
+			at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.
+		</div>
+		<div><span data-target="#news-4" class="show-spoiler">Show</span></div>
+	</div>
+
+
+</body>
+</html>

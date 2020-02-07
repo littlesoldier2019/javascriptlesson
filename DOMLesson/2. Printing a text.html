@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Displaying a text with setInterval</title>
+	<meta charset="utf-8" />
+	<script>
+		window.onload = function () {
+			// var div = document.querySelector("#text");
+			// // сохранили копию текста из блока в переменную
+			// // saving a copy from text block to variable
+			// var str = div.innerHTML;
+			// // а из блока удаляем
+			// // delete the content from the block
+			// div.innerHTML = "";
+			
+
+			// var i = 0;
+
+			// var timer = setInterval(function () {
+			// 		// увеличиваем счетчик
+			// 		// increasing a counter
+			// 	var r = Math.floor(Math.random()* 256);
+			// 	var g = Math.floor(Math.random()* 256);
+			// 	var b = Math.floor(Math.random()* 256);
+			// 	var span = document.createElement("span");
+			// 	span.innerHTML = str[i];
+			// 	span.style.color = "rgb("+r+","+g+","+b+")";
+
+			// 	div.appendChild(span);
+			// 	i++;
+
+			// 	// если значение переменной i больше или равно кол-ву символов в строке
+			// 	// if i is greater ot equal the number of symbols in string
+			// 	if (i >= str.length) {
+			// 		clearInterval(timer);
+			// 	}
+			// }, 100);
+
+			let div = document.querySelector('#text');
+			let textStr = div.innerHTML;
+
+			div.innerHTML = '';
+
+			let i = 0;
+
+			let createText = setInterval(function() {
+				let r = Math.floor(Math.random()* 256);
+				let g = Math.floor(Math.random()* 256);
+				let b = Math.floor(Math.random()* 256);
+
+				let span = document.createElement('span');
+
+				span.innerHTML = textStr[i];
+				span.style.color = "rgb("+r+","+g+","+b+")";
+				div.appendChild(span);
+		
+				i++;
+			
+				if (i >= textStr.length) {
+				clearInterval(createText);
+				}
+
+			}, 100);
+		}
+	</script>
+	<style>
+		#text:after {
+			content: '';
+			display: inline-block;
+			border-right: 1px solid #111;
+			height: 16px;
+			vertical-align: middle;
+			margin-left: 2px;
+			animation: 1s blink infinite;
+		}
+
+		@keyframes blink {
+			0% {opacity: 1;}
+			100% {opacity: 0;}
+		}
+
+	</style>
+</head>
+<body>
+	<div id="text">This is some random text which we will print letter by letter.</div>
+</body>
+</html>
