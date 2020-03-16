@@ -128,9 +128,19 @@ for (let i = 0; i <= salaryExample.length - 1; i++) {
         salarySum += Number(salaryArray[i]);
     } 
 }
-console.log(salarySum)
+console.log(salarySum);
 
-//===Boolean===
+//===
+let text = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.';
+
+let textArr = text.split(' ');
+console.log(textArr);
+
+let num = textArr.filter( item => (!isNaN(parseInt(item))) ).map( item => parseInt(item) )
+let balance = num.reduce( (total,num) => total + num)
+console.log(balance);
+
+//=== Exercise 5 Boolean ===
 console.log("===BOOLEAN===")
 //Ex1
 console.log(Boolean(2 == 2))
@@ -153,7 +163,10 @@ console.log(Boolean(4 != "4")) //False
 console.log(Boolean(4 == '4')) //True
 console.log(Boolean(4 === '4')) //False
 
-//===Logical Operators===
+//=== Exersise 6 Data Type===
+console.log("===DATA TYPE===")
+
+//=== Exersise 7 Logical Operators===
 console.log("===LOGICAL OPERATORS===")
 console.log(Boolean(4 > 3 && 10 < 12)) //True
 console.log(Boolean(4 > 3 && 10 > 12)) //False
@@ -166,7 +179,7 @@ console.log(Boolean(!(4 > 3 && 10 < 12))) //False
 console.log(Boolean(!(4 > 3 && 10 > 12))) //True
 console.log(Boolean(!(4 === '4'))) //True
 
-//===Conditionals===
+//=== Exersise 8 Conditionals===
 console.log("===CONDITIONALS===")
 //Ex1
 /*let age3 = prompt("Enter your age: ");
@@ -194,6 +207,42 @@ if (compareAB = true) {
 } else {
     console.log("a is less than b")
 }
+
+//Ex4
+
+function gradeStudent(grade) {
+    if ( grade >= 80 && grade <=100) {
+        return 'A';
+    } else if ( grade >= 70 && grade <=79) {
+        return 'B';
+    } else if ( grade >= 60 && grade <=69) {
+        return 'C';
+    } else if ( grade >= 50 && grade <=59) {
+        return 'D';
+    } else if ( grade >= 0 && grade <=49) {
+        return 'F';
+    }
+}
+
+alert(gradeStudent(80));
+
+//Ex5
+
+let userInput = prompt('What month?','').toLocaleLowerCase();
+
+function getSeason(userInput) {
+    if ( userInput === 'September' || userInput === 'October' || userInput === 'November' ) {
+        return 'The season is Autumn';
+    } else if ( userInput === 'December' || userInput === 'January' || userInput === 'February' ) {
+        return 'The season is Winter';
+    } else if ( userInput === 'March' || userInput === 'April' || userInput === 'May' ) {
+        return 'The season is Spring';
+    } else if ( userInput === 'June' || userInput === 'July' || userInput === 'August' ) {
+        return 'The season is Summer';
+    }
+}
+
+alert(getSeason(userInput));
 
 //===Loops===
 console.log("===LOOPs===")
@@ -286,8 +335,8 @@ for (let i = 0; i <= 100; i++) {
 }
 console.log(sumOdds)
 
-//===Arrays===
-console.log("===ARRAY===")
+//=== Exercise 9 Arrays===
+console.log("===Exercise 9 ARRAY===")
 
 //Ex1
 const array2 = []
@@ -414,34 +463,97 @@ console.log(itCompanies)
 //Ex24
 console.log(itCompanies.splice())
 
+//=== Exercise 10 Functions ===
+console.log("===Exercise 10 FUNCTIONS===")
 
-//Javasript.info
+//ex47 check Prime number
 
-// let message = prompt("How old are you?")
-// alert(`You are ${message} years old`);
+function isPrime(num) {
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0 ) {
+            return 'NOT a prime';
+        } else {
+            return 'Is a prime';
+        }
+    }
+}
 
-// let name = prompt("What is your name?","Write your name")
-// alert(`Welcome ${name}`);
+alert(isPrime(5));
 
-// let nameOfJavaScript = prompt("What is the “official” name of JavaScript?", "")
-// if (nameOfJavaScript == "ECMAScript") {
-//     alert("Right!");
-// } else {
-//     alert("You don't know? “ECMAScript”!")
-// }
+//Ex48 check duplicate in array
 
-// let inputNumber = prompt("Write a number", "");
-// if (inputNumber > 0) {
-//     alert("1");
-// } else if (inputNumber < 0) {
-//     alert("-1");
-// } else  
-//     alert("0");
+var names = ['Mike', 'Matt', 'Nancy', 'Adam', 'Jenny', 'Nancy', 'Carl']
 
-let result = (a + b < 4)? "Below": "Over";
-let login;
+var uniq = names
+  .map((name) => {
+    return {
+      count: 1,
+      name: name
+    }
+  })
+  .reduce((a, b) => {
+    a[b.name] = (a[b.name] || 0) + b.count
+    return a
+  }, {})
 
-let message1 = (login == "Employee")? "Hello":
-(login == "Director")? "Greetings":
-(login == "")? "No login":
-"";
+var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1)
+
+alert(duplicates); // [ 'Nancy' ]
+
+
+//=== Exercise Functional Programming ===
+console.log("===Exercise Functional Programming===")
+
+const countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand'];
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+//ex 3
+ countries.forEach( (country) => {console.log(country)});
+
+//ex 4
+names.forEach( (name) => {console.log(name)});
+
+//ex 5
+numbers.forEach( (number) => {console.log(number)});
+
+//ex 6
+let newCountries = [];
+countries.map( (country) => {newCountries.push(country.toUpperCase())} );
+console.log(newCountries);
+
+//ex 7
+let newNumbers = [];
+numbers.map( (number) => newNumbers.push(number*2) );
+console.log(newNumbers)
+
+//ex 8
+names.map( (name) => {console.log(name.toUpperCase())} );
+
+//ex 9
+let landCountry = [];
+countries.filter( function(country) { if (country.toLowerCase().includes('land') === true) { landCountry.push(country)} 
+})
+console.log(landCountry);
+
+//ex 10
+let sixCountry = [];
+countries.filter( function(country) { if (country.length === 6) { sixCountry.push(country)} 
+})
+console.log(sixCountry);
+
+//ex 11
+let sevenCountry = [];
+countries.filter( function(country) { if (country.length >= 6) { sevenCountry.push(country)} 
+})
+console.log(sevenCountry);
+
+//ex 12
+let ECountry = [];
+countries.filter( function(country) { if (country.indexOf('E') === 0) { ECountry.push(country)} 
+})
+console.log(ECountry); 
+
+//ex 13
+let newArrCountries = countries.map((country) => country.toUpperCase()).filter((country) => country.includes('I'));
+console.log(newArrCountries);
