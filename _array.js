@@ -239,9 +239,9 @@ let mary = { name: "Mary", age: 28 };
 
 let users = [ john, pete, mary ];
 
-let names = users.map(item => item.name);
+let names3 = users.map(item => item.name);
 
-console.log( names ); // John, Pete, Mary
+console.log( names3 ); // John, Pete, Mary
 
 ///=================
 let john2 = { name: "John", surname: "Smith", id: 1 };

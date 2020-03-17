@@ -224,25 +224,25 @@ function gradeStudent(grade) {
     }
 }
 
-alert(gradeStudent(80));
+console.log(gradeStudent(80));
 
 //Ex5
 
-let userInput = prompt('What month?','').toLocaleLowerCase();
+// let userInput = prompt('What month?','').toLocaleLowerCase();
 
-function getSeason(userInput) {
-    if ( userInput === 'September' || userInput === 'October' || userInput === 'November' ) {
-        return 'The season is Autumn';
-    } else if ( userInput === 'December' || userInput === 'January' || userInput === 'February' ) {
-        return 'The season is Winter';
-    } else if ( userInput === 'March' || userInput === 'April' || userInput === 'May' ) {
-        return 'The season is Spring';
-    } else if ( userInput === 'June' || userInput === 'July' || userInput === 'August' ) {
-        return 'The season is Summer';
-    }
-}
+// function getSeason(userInput) {
+//     if ( userInput === 'September' || userInput === 'October' || userInput === 'November' ) {
+//         return 'The season is Autumn';
+//     } else if ( userInput === 'December' || userInput === 'January' || userInput === 'February' ) {
+//         return 'The season is Winter';
+//     } else if ( userInput === 'March' || userInput === 'April' || userInput === 'May' ) {
+//         return 'The season is Spring';
+//     } else if ( userInput === 'June' || userInput === 'July' || userInput === 'August' ) {
+//         return 'The season is Summer';
+//     }
+// }
 
-alert(getSeason(userInput));
+// alert(getSeason(userInput));
 
 //===Loops===
 console.log("===LOOPs===")
@@ -478,7 +478,7 @@ function isPrime(num) {
     }
 }
 
-alert(isPrime(5));
+console.log(isPrime(5));
 
 //Ex48 check duplicate in array
 
@@ -498,21 +498,21 @@ var uniq = names
 
 var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1)
 
-alert(duplicates); // [ 'Nancy' ]
+console.log(duplicates); // [ 'Nancy' ]
 
 
 //=== Exercise Functional Programming ===
 console.log("===Exercise Functional Programming===")
 
 const countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand'];
-const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+const names2 = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 //ex 3
  countries.forEach( (country) => {console.log(country)});
 
 //ex 4
-names.forEach( (name) => {console.log(name)});
+names2.forEach( (name) => {console.log(name)});
 
 //ex 5
 numbers.forEach( (number) => {console.log(number)});
